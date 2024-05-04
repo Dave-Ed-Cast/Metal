@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		3E4382282BE63FA1000043E7 /* FirstExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4382272BE63FA1000043E7 /* FirstExampleView.swift */; };
 		3E43822A2BE63FA2000043E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4382292BE63FA2000043E7 /* Assets.xcassets */; };
 		3E43822D2BE63FA2000043E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E43822C2BE63FA2000043E7 /* Preview Assets.xcassets */; };
+		3EDA1AC12BE6B03700FF5B85 /* FifthExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA1AC02BE6B03700FF5B85 /* FifthExampleView.swift */; };
 		3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0791F2BE63FE500202946 /* MetalTesting.metal */; };
 		3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079212BE65FF400202946 /* SecondExampleView.swift */; };
 		3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079232BE66FB700202946 /* ThirdExampleView.swift */; };
@@ -23,6 +24,7 @@
 		3E4382272BE63FA1000043E7 /* FirstExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleView.swift; sourceTree = "<group>"; };
 		3E4382292BE63FA2000043E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E43822C2BE63FA2000043E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3EDA1AC02BE6B03700FF5B85 /* FifthExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthExampleView.swift; sourceTree = "<group>"; };
 		3EE0791F2BE63FE500202946 /* MetalTesting.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalTesting.metal; sourceTree = "<group>"; };
 		3EE079212BE65FF400202946 /* SecondExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondExampleView.swift; sourceTree = "<group>"; };
 		3EE079232BE66FB700202946 /* ThirdExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdExampleView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				3EE079212BE65FF400202946 /* SecondExampleView.swift */,
 				3EE079232BE66FB700202946 /* ThirdExampleView.swift */,
 				3EE079252BE699B300202946 /* FourthExampleView.swift */,
+				3EDA1AC02BE6B03700FF5B85 /* FifthExampleView.swift */,
 				3EE0791F2BE63FE500202946 /* MetalTesting.metal */,
 				3E4382292BE63FA2000043E7 /* Assets.xcassets */,
 				3E43822B2BE63FA2000043E7 /* Preview Content */,
@@ -115,7 +118,7 @@
 				};
 			};
 			buildConfigurationList = 3E43821D2BE63FA1000043E7 /* Build configuration list for PBXProject "MetalShaders" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -152,6 +155,7 @@
 				3E4382282BE63FA1000043E7 /* FirstExampleView.swift in Sources */,
 				3EE079262BE699B300202946 /* FourthExampleView.swift in Sources */,
 				3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */,
+				3EDA1AC12BE6B03700FF5B85 /* FifthExampleView.swift in Sources */,
 				3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */,
 				3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */,
 				3E4382262BE63FA1000043E7 /* MetalShadersApp.swift in Sources */,

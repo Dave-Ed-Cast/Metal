@@ -40,13 +40,22 @@ extension AnyTransition {
  */
 
 
-//MARK: Now let's do it in metal
+//MARK: Understand how should i make this work
 struct FourthExampleView: View {
+    
+    @State private var progress: Double = 0.0
+    @State private var size: Double = 0.0
     var body: some View {
-        Image("Image")
-            .resizable()
-            .scaledToFit()
-            .background(.white)
+        TimelineView(.animation) { tl in
+            Image("Image")
+                .resizable()
+                .scaledToFit()
+                .background(.white)
+                .colorEffect(ShaderLibrary.circles(
+                    .float(progress),
+                    .float(size)
+                ))
+        }
     }
 }
 

@@ -154,7 +154,7 @@ using namespace metal;
     //float d = distance(f, 0.5);
     
     //we can use the diamond shape effect, which is simply, in a figurative way, moving first north then east, or north then west, or south then east etc..
-    float d = abs (f.x - 0.5) + abs(f.y - 0.5);
+    float d = abs(f.x - 0.5) + abs(f.y - 0.5);
     
     //then we check if the distance is less than the amount
     //if (d < amount) {
@@ -167,4 +167,133 @@ using namespace metal;
         //otherwise dont do anything
         return 0;
     }
+}
+
+
+[[stitchable]] half4 crosswarp(float2 pos, SwiftUI::Layer l, float2 s, float amount) {
+    float2 uv = pos / s;
+    float x = smoothstep(0, 1, amount * 2 + uv.x - 1);
+    
+    float2 warp = mix(uv, float(0.5), x);
+    return mix(l.sample(warp * s), 0, x);
+}
+
+
+
+//sinebow
+[[stitchable]] half4 sinebow(float2 pos, half4 color, float2 s, float t) {
+    
+    //we want the coordinates ranging between 1 and -1, by multiplying the output of pos / s.x for those values
+    float2 uv = (pos / s.x) * 2 - 1;
+    
+    //to center the brightness
+    uv.y += 0.15;
+    
+    //define the wave
+    float wave = sin(uv.x + t);
+    
+    //and the frequency
+    wave *= wave * 50;
+    
+    //the brightness of the single pixel. The larger the denominator, the less bright it is. If you see the view, you will notice hat the bottom of the wave is brighter. However, if we want the glow to appear on top and on the bottom, just do abs
+    float luma = 1 / (100 * uv.y + wave);
+    
+    //and we color it with this brightness
+    return half4(luma, luma, luma, 1);
+}
+
+//MARK: this has almost the same logic, so I'm gonna comment only the differences
+[[stitchable]] half4 sineRainbow(float2 pos, half4 color, float2 s, float t) {
+    
+    float2 uv = (pos / s.x) * 2 - 1;
+    uv.y += 0.15;
+    float wave = sin(uv.x + t);
+    wave *= wave * 50;
+    float luma = abs(1 / (100 * uv.y + wave));
+    
+    //to do the rainbow effect, we need to color the wave, but we don't need the negatives
+    //what's actually happening is, i color the red based on time, and the others are fixed.
+    half3 rainbow = half3(
+        sin(0.3 + t) * 0.5 + 0.5,
+        sin(0.3 + 2) * 0.5 + 0.5,
+        sin(0.3 + 4) * 0.5 + 0.5
+    );
+    
+    //now to return the rainbow effect, we just need to multiply the half3 and the luma
+    return half4(rainbow * luma, 1);
+}
+
+[[stitchable]] half4 newSineRainbow(float2 pos, half4 color, float2 s, float t) {
+    
+    float2 uv = (pos / s.x) * 2 - 1;
+    uv.y += 0.15;
+    float wave = sin(uv.x + t);
+    wave *= wave * 50;
+    float luma = abs(1 / (100 * uv.y + wave));
+
+    //before the green and blue were fixed. let's make green change on his own time schedule
+    half3 rainbow = half3(
+        sin(0.3 + t) * 0.5 + 0.5,
+        sin(0.3 + 2 + sin(t * 0.3) * 2) * 0.5 + 0.5,
+        sin(0.3 + 4) * 0.5 + 0.5
+    );
+    
+    return half4(rainbow * luma, 1);
+}
+
+
+[[stitchable]] half4 composedSineRainbow(float2 pos, half4 color, float2 s, float t) {
+    
+    float2 uv = (pos / s.x) * 2 - 1;
+    uv.y += 0.15;
+    float wave = sin(uv.x + t);
+    wave *= wave * 50;
+    
+    //we can actually start from zero and make things go even better by declaring this
+    half3 waveColor = half3(0);
+    
+    //but to start from black, we have to RGB(0,0,0). To do so we are going to throw some feels:
+    for (float i = 0; i < 10; i++) {
+        
+        //the float i is just to add more brightness and color
+        float luma = abs(1 / (100 * uv.y + wave));
+        
+        half3 rainbow = half3(
+            sin(0.3 + t) * 0.5 + 0.5,
+            sin(0.3 + 2 + sin(t * 0.3) * 2) * 0.5 + 0.5,
+            sin(0.3 + 4) * 0.5 + 0.5
+        );
+        
+        //and summing it up and multiplying it with luma. We start black and color it from that
+        waveColor += rainbow * luma;
+    }
+    
+    return half4(waveColor, 1);
+}
+
+
+[[stitchable]] half4 rainbow(float2 pos, half4 color, float2 s, float t) {
+    
+    float2 uv = (pos / s.x) * 2 - 1;
+    uv.y += 0.15;
+    float wave = sin(uv.x + t);
+    wave *= wave * 50;
+    half3 waveColor = half3(0);
+    
+    for (float i = 0; i < 10; i++) {
+        
+        //remember that we are trying to calculate how far we are from the nearest line. So now let's just throw each line a little lower
+        float width = abs(1 / (100 * uv.y + wave));
+        uv.y += 0.05;
+        
+        half3 rainbow = half3(
+            sin(0.3 + t) * 0.5 + 0.5,
+            sin(0.3 + 2 + sin(t * 0.3) * 2) * 0.5 + 0.5,
+            sin(0.3 + 4) * 0.5 + 0.5
+        );
+        
+        waveColor += rainbow * width;
+    }
+    
+    return half4(waveColor, 1);
 }
