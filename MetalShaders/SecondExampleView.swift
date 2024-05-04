@@ -18,21 +18,24 @@ struct SecondExampleView: View {
             let time = start.distance(to: tl.date)
             
             Image("Italy")
-                .font(.system(size: 300))
+                .resizable()
+                .scaledToFit()
                 .foregroundStyle(.tint)
-            
             //read the "relativeWave" function in the metal file
                 .padding(.vertical, 20)
+                .padding()
                 .background(.white)
                 .drawingGroup()
             
             //MARK: relative wave
-//                .visualEffect { content, geometryProxy in
-//                    content
-//                        .distortionEffect(ShaderLibrary.relativeWave(.float(time), .float2(geometryProxy.size)), maxSampleOffset: .zero)
-//                }
-            
-            
+                .visualEffect { content, geometryProxy in
+                    content
+                        .distortionEffect(
+                            ShaderLibrary.relativeWave(
+                                .float(time),
+                                .float2(geometryProxy.size)
+                            ), maxSampleOffset: .zero)
+                }
         }
     }
 }

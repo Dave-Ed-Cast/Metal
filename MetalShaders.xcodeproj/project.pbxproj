@@ -14,6 +14,7 @@
 		3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0791F2BE63FE500202946 /* MetalTesting.metal */; };
 		3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079212BE65FF400202946 /* SecondExampleView.swift */; };
 		3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079232BE66FB700202946 /* ThirdExampleView.swift */; };
+		3EE079262BE699B300202946 /* FourthExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079252BE699B300202946 /* FourthExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		3EE0791F2BE63FE500202946 /* MetalTesting.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalTesting.metal; sourceTree = "<group>"; };
 		3EE079212BE65FF400202946 /* SecondExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondExampleView.swift; sourceTree = "<group>"; };
 		3EE079232BE66FB700202946 /* ThirdExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdExampleView.swift; sourceTree = "<group>"; };
+		3EE079252BE699B300202946 /* FourthExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3E4382272BE63FA1000043E7 /* FirstExampleView.swift */,
 				3EE079212BE65FF400202946 /* SecondExampleView.swift */,
 				3EE079232BE66FB700202946 /* ThirdExampleView.swift */,
+				3EE079252BE699B300202946 /* FourthExampleView.swift */,
 				3EE0791F2BE63FE500202946 /* MetalTesting.metal */,
 				3E4382292BE63FA2000043E7 /* Assets.xcassets */,
 				3E43822B2BE63FA2000043E7 /* Preview Content */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E4382282BE63FA1000043E7 /* FirstExampleView.swift in Sources */,
+				3EE079262BE699B300202946 /* FourthExampleView.swift in Sources */,
 				3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */,
 				3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */,
 				3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */,

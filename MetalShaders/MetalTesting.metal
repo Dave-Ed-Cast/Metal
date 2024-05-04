@@ -61,7 +61,7 @@ using namespace metal;
  For example: 1x1, 1x2, 1x3, 1x4, ..., 1x300, 2x1, 2x2, 2x3, ...
  
  Then for the other field of the half4, simply do the opposite. Now look into the view and just appreciate how this simple math approach can work such magic
-*/
+ */
 [[stitchable]] half4 gradientFill(float2 pos, half4 color) {
     return half4(pos.x / pos.y, 0, pos.y / pos.x, color.a);
 }
@@ -109,7 +109,7 @@ using namespace metal;
     //self explained
     float2 center = touch / s;
     
-    //another math concept. The distance between two points in a plane or space is called delta usually. We want to calculate the radius to zoom, therefore we need the distance
+    //another math concept. The little distance between two close points in a plane or space is called delta usually. We want to calculate the radius to zoom, therefore we need the distance
     float2 delta = uv - center;
     
     //self explained
@@ -126,12 +126,45 @@ using namespace metal;
         totalZoom /= 2;
         
         //as the distance grows, undo the zoom
-        totalZoom += distance * 3;
+        totalZoom += distance * 2;
     }
+    //with this i discovered i can play some sort of "discovery game". So this makes the image hidden, and when you click on the view it makes the zoomed area appear
+    //        return l.sample(pos * s);
     
     //but the question arises: which pixels should be drawn inside the zoom, and which should be not? That's actually not hard. Remember we are pressing in one point of the screen, so we take the actual distance, multiply the zoom, and now the last problem is that the distance from the finger won't match, nothing that cannot be fixed by summing the actual center
     float2 newPos = delta * totalZoom + center;
     
     //to return the actual pixels we have to read, we simply do
     return l.sample(newPos * s);
+}
+
+//this is for fading images in a cool way
+[[stitchable]] half4 circles(float2 pos, half4 color, float2 s, float amount) {
+    
+    //well first we get the positio
+    float2 uv = pos / s;
+    
+    //we define the strength of it
+    float strength = 20;
+    
+    //then we calculate the fractional part of these 2 values divided
+    float2 f = fract(pos / strength);
+    
+    //then we define the distance, but this is the simple case where we use circles
+    //float d = distance(f, 0.5);
+    
+    //we can use the diamond shape effect, which is simply, in a figurative way, moving first north then east, or north then west, or south then east etc..
+    float d = abs (f.x - 0.5) + abs(f.y - 0.5);
+    
+    //then we check if the distance is less than the amount
+    //if (d < amount) {
+    
+    //or for the diamond effect, plus we make it from top to bottom
+    if (d + uv.x + uv.y < amount * 3) {
+        //return the color
+        return color;
+    } else {
+        //otherwise dont do anything
+        return 0;
+    }
 }
