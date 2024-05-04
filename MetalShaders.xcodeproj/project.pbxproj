@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		3E4382262BE63FA1000043E7 /* MetalShadersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4382252BE63FA1000043E7 /* MetalShadersApp.swift */; };
-		3E4382282BE63FA1000043E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4382272BE63FA1000043E7 /* ContentView.swift */; };
+		3E4382282BE63FA1000043E7 /* FirstExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4382272BE63FA1000043E7 /* FirstExampleView.swift */; };
 		3E43822A2BE63FA2000043E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4382292BE63FA2000043E7 /* Assets.xcassets */; };
 		3E43822D2BE63FA2000043E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E43822C2BE63FA2000043E7 /* Preview Assets.xcassets */; };
+		3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0791F2BE63FE500202946 /* MetalTesting.metal */; };
+		3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079212BE65FF400202946 /* SecondExampleView.swift */; };
+		3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE079232BE66FB700202946 /* ThirdExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E4382222BE63FA1000043E7 /* MetalShaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalShaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4382252BE63FA1000043E7 /* MetalShadersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalShadersApp.swift; sourceTree = "<group>"; };
-		3E4382272BE63FA1000043E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3E4382272BE63FA1000043E7 /* FirstExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleView.swift; sourceTree = "<group>"; };
 		3E4382292BE63FA2000043E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E43822C2BE63FA2000043E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3EE0791F2BE63FE500202946 /* MetalTesting.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalTesting.metal; sourceTree = "<group>"; };
+		3EE079212BE65FF400202946 /* SecondExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondExampleView.swift; sourceTree = "<group>"; };
+		3EE079232BE66FB700202946 /* ThirdExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				3E4382252BE63FA1000043E7 /* MetalShadersApp.swift */,
-				3E4382272BE63FA1000043E7 /* ContentView.swift */,
+				3E4382272BE63FA1000043E7 /* FirstExampleView.swift */,
+				3EE079212BE65FF400202946 /* SecondExampleView.swift */,
+				3EE079232BE66FB700202946 /* ThirdExampleView.swift */,
+				3EE0791F2BE63FE500202946 /* MetalTesting.metal */,
 				3E4382292BE63FA2000043E7 /* Assets.xcassets */,
 				3E43822B2BE63FA2000043E7 /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E4382282BE63FA1000043E7 /* ContentView.swift in Sources */,
+				3E4382282BE63FA1000043E7 /* FirstExampleView.swift in Sources */,
+				3EE079222BE65FF400202946 /* SecondExampleView.swift in Sources */,
+				3EE079202BE63FE500202946 /* MetalTesting.metal in Sources */,
+				3EE079242BE66FB700202946 /* ThirdExampleView.swift in Sources */,
 				3E4382262BE63FA1000043E7 /* MetalShadersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
