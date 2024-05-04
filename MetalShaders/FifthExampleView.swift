@@ -50,12 +50,20 @@ struct FifthExampleView: View {
 //                )
                   
             //MARK: another rainbow
-                .visualEffect{ content, geometryProxy in content.colorEffect(
-                    ShaderLibrary.rainbow(
-                        .float2(geometryProxy.size),
-                        .float (time)
+//                .visualEffect{ content, geometryProxy in content.colorEffect(
+//                    ShaderLibrary.newRainbow(
+//                        .float2(geometryProxy.size),
+//                        .float (time)
+//                    )
+//                )
+                    
+                //MARK: final rainbow
+                    .visualEffect{ content, geometryProxy in content.colorEffect(
+                        ShaderLibrary.newRainbow(
+                            .float2(geometryProxy.size),
+                            .float (time)
+                        )
                     )
-                )
                 }
         }
     }
