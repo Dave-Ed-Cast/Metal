@@ -18,50 +18,56 @@ struct FifthExampleView: View {
                 .ignoresSafeArea()
             
             //MARK: sinebow
-//                .visualEffect { content, geometryProxy in content.colorEffect(
+//                .visualEffect{ content, geometryProxy in
+//                    content.colorEffect(
 //                    ShaderLibrary.sinebow(
 //                        .float2(geometryProxy.size),
-//                        .float (time)
+//                        .float(time)
 //                    )
 //                )
 //            }
             //MARK: sineRainbow
-//                .visualEffect{ content, geometryProxy in content.colorEffect(
+//                .visualEffect{ content, geometryProxy in
+//                    content.colorEffect(
 //                    ShaderLibrary.sineRainbow(
 //                        .float2(geometryProxy.size),
-//                        .float (time)
+//                        .float(time)
 //                    )
 //                )
                     
             //MARK: newSineRainbow
-//                .visualEffect{ content, geometryProxy in content.colorEffect(
+//                .visualEffect{ content, geometryProxy in 
+//                    content.colorEffect(
 //                    ShaderLibrary.newSineRainbow(
 //                        .float2(geometryProxy.size),
-//                        .float (time)
+//                        .float(time)
 //                    )
 //                )
                  
             //MARK: composedSineRainBow
-//                .visualEffect{ content, geometryProxy in content.colorEffect(
+//                .visualEffect{ content, geometryProxy in 
+//                    content.colorEffect(
 //                    ShaderLibrary.composedSineRainbow(
 //                        .float2(geometryProxy.size),
-//                        .float (time)
+//                        .float(time)
 //                    )
 //                )
                   
             //MARK: another rainbow
-//                .visualEffect{ content, geometryProxy in content.colorEffect(
+//                .visualEffect{ content, geometryProxy in 
+//                    content.colorEffect(
 //                    ShaderLibrary.newRainbow(
 //                        .float2(geometryProxy.size),
-//                        .float (time)
+//                        .float(time)
 //                    )
 //                )
                     
                 //MARK: final rainbow
-                    .visualEffect{ content, geometryProxy in content.colorEffect(
-                        ShaderLibrary.newRainbow(
+                    .visualEffect{ content, geometryProxy in
+                        content.colorEffect(
+                        ShaderLibrary.finalRainbow(
                             .float2(geometryProxy.size),
-                            .float (time)
+                            .float(time)
                         )
                     )
                 }
